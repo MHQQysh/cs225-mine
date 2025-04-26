@@ -13,6 +13,13 @@
  */
 template <class K, class V>
 class LPHashTable : public HashTable<K, V>
+
+
+
+
+
+
+
 {
   private:
     // so we can refer to hash, elems, and size directly, and use the
@@ -27,9 +34,45 @@ class LPHashTable : public HashTable<K, V>
     // this
     class LPIteratorImpl;
 
+
+
+
+
+
+
+/* 
+这里的意思是
+
+*/
+
   public:
-    // we use HashTable's iterators here
-    typedef typename HashTable<K, V>::iterator iterator;
+
+  /* 第一个 */
+/* // we use HashTable's iterators here: 这是一个注释，说明 LPHashTable 类将使用另一个名为 HashTable 的类提供的迭代器功能。这暗示了 LPHashTable 和 HashTable 之间可能存在某种关系，比如继承或者组合。 */
+
+
+/* typedef typename HashTable<K, V>::iterator iterator;: 这一行定义了一个类型别名。
+typedef: 这个关键字用于为现有的类型创建一个新的名称（别名）。
+typename HashTable<K, V>::iterator: 这指定了 iterator 将要代表的现有类型。
+
+
+HashTable<K, V>: 这表明存在一个名为 HashTable 的类，它很可能是一个模板类，通过两个类型参数 K（很可能是键的类型）和 V（很可能是存储在哈希表中的值的类型）进行参数化。
+
+::iterator: 这表示 HashTable 类内部定义了一个名为 iterator 的嵌套类型。这在 C++ 中是一种常见的做法，用于提供一种遍历容器类（如哈希表）中元素的方法。
+
+iterator: 这是新定义的别名。现在，在 LPHashTable 类的作用域内，你可以使用 iterator 作为 typename HashTable<K, V>::iterator 的简写。这使得代码在处理底层 HashTable 的迭代器时更易读且更简洁
+
+
+*/
+
+
+
+
+
+  typedef typename HashTable<K,T>::iterator iterator;
+
+
+
 
     /**
      * Constructs a LPHashTable of the given size.
@@ -45,6 +88,21 @@ class LPHashTable : public HashTable<K, V>
      */
     virtual ~LPHashTable();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Assignment operator.
      *
@@ -53,6 +111,11 @@ class LPHashTable : public HashTable<K, V>
      * @return A const reference to the current LPHashTable.
      */
     const LPHashTable<K, V>& operator=(const LPHashTable<K, V>& rhs);
+
+
+
+
+
 
     /**
      * Copy constructor.

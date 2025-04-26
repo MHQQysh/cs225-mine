@@ -159,6 +159,12 @@ V& LPHashTable<K, V>::operator[](K const& key)
     return table[idx]->second;
 }
 
+
+
+
+
+
+
 template <class K, class V>
 bool LPHashTable<K, V>::keyExists(K const& key) const
 {
@@ -179,6 +185,10 @@ void LPHashTable<K, V>::clear()
     size = 17;
     elems = 0;
 }
+
+
+
+
 
 template <class K, class V>
 void LPHashTable<K, V>::resizeTable()
